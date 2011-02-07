@@ -1,24 +1,22 @@
 = protective
 
-Protect active records from being destroyed in a declarative way.
-
-In your ActiveRecord models, you are used to protect the instances from being destroyed as follows:
+In your ActiveRecord models, you used to protect the instances from being destroyed as follows:
 
   before_destroy :protect_if_has_attachments
   
   def protect_if_has_attachments
     unless attachments.empty?
-      errors.add(:base, "Record has attachments and cannot be destroyed"
+      errors.add(:base, "Record has attachments and cannot be destroyed")
     end
   end
 
-With protective, this is reduced to
+With +protective+, this is reduced to:
 
   protect_if :attachments, "Record has attachments and cannot be destroyed"
 
-No exception is thrown, but a message is added to the errors object of your model. This may then be used further on.
+Of course, you may pass the name of any defined method. If its result evaluates to +present?+, the record is not going to be destroyed. No exception is thrown, but a message is added to the +errors+ object of your model. This may then be used further on.
 
-To use protective, simply add it to your Gemfile:
+To use protective, simply add it to your +Gemfile+:
 
   gem 'protective'
 

@@ -13,15 +13,15 @@ module Protective
     # it is added to the corresponding #errors object.
     def protect_if(method, message = nil)
       unless self < InstanceMethods
-      	class_attribute :protect_if_methods
+        class_attribute :protect_if_methods
         self.protect_if_methods = {}
 
         before_destroy :destruction_allowed? 
         send :include, InstanceMethods
-  	  end
+      end
       
       protect_if_methods[method] = message
-  	end
+    end
   end
    
   module InstanceMethods

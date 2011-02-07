@@ -13,13 +13,11 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'protective'
 
- 
+
 def load_schema
   config = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
- 
-  db_adapter = 'sqlite3'
- 
-  ActiveRecord::Base.establish_connection(config[db_adapter])
+
+  ActiveRecord::Base.establish_connection(config['sqlite3'])
   load(File.dirname(__FILE__) + "/schema.rb")
 end
 

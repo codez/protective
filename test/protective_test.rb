@@ -15,8 +15,8 @@ class ProtectiveTest < Test::Unit::TestCase
   end
   
   def test_setup
-  	assert_equal [], Subject.all
-  	assert_equal 2, Subject.protect_if_methods.size
+    assert_equal [], Subject.all
+    assert_equal 2, Subject.protect_if_methods.size
   end
   
   def test_empty_subject_may_be_destroyed
@@ -44,8 +44,8 @@ class ProtectiveTest < Test::Unit::TestCase
   end
   
   def teardown
-  	Subject.delete_all
-  	Attachment.delete_all
+    Subject.delete_all
+    Attachment.delete_all
   end
   
 end

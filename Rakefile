@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/codez/protective"
   gem.license = "MIT"
   gem.summary = %Q{Protect records from being destroyed in a declarative way}
-  gem.description = %Q{Protect records from being destroyed in a declarative way}
+  gem.description = %Q{Protect records from being destroyed in a declarative way. Simply add 'protect_if :dont_delete, "Record is marked as not deletable"' to your ActiveRecord model. Your record will no be destroyed and the given message is added to the errors object.}
   gem.email = "spam@codez.ch"
   gem.authors = ["Pascal Zumkehr"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -49,5 +49,6 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "protective #{version}"
   rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('LICENSE*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

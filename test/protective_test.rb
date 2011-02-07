@@ -35,6 +35,7 @@ class ProtectiveTest < Test::Unit::TestCase
   def test_subject_may_not_be_destroyed_with_attachements
     s = Subject.create! :name => 'test'
     s.attachments.create! :name => 'att'
+    assert s.attachments.respond_to?(:empty?)
     assert_equal 1, s.attachments.count
     assert s.protected?
     assert !s.destroy

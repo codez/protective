@@ -1,3 +1,0 @@
-sqlite3:
-  adapter: sqlite3
-  database: test/protective_plugin.sqlite3.db

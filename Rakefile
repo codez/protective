@@ -9,6 +9,11 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
+
+
+task :default => :test
+
+
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
@@ -33,16 +38,16 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/*_test.rb'
-  test.verbose = true
+if RUBY_VERSION == '1.8.7' && !defined?(JRUBY_VERSION)
+	require 'rcov/rcovtask'
+	Rcov::RcovTask.new do |test|
+	  test.libs << 'test'
+	  test.pattern = 'test/**/*_test.rb'
+	  test.verbose = true
+	end
 end
 
-task :default => :test
-
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 

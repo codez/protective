@@ -10,6 +10,12 @@ gem "activerecord"
 group :development do
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.5.2"
-  gem "rcov", ">= 0"
-  gem "sqlite3"
+  gem "rdoc"
+  
+  gem "rcov", :platform => :ruby_18
+  gem "simplecov", :platform => :ruby_19
+
+	gem 'sqlite3', :platforms => :ruby
+	gem 'jdbc-sqlite3', '3.6.14.2.056', :platforms => :jruby
+	gem 'activerecord-jdbcsqlite3-adapter', :platforms => :jruby
 end

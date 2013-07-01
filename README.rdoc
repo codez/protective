@@ -22,6 +22,8 @@ To use protective, simply add it to your +Gemfile+:
   gem 'protective'
 
 
+{<img src="https://secure.travis-ci.org/codez/protective.png" />}[http://travis-ci.org/codez/protective]
+
 == Copyright
 
 Copyright (c) 2011 Pascal Zumkehr. See LICENSE.txt for

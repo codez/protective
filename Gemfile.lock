@@ -77,7 +77,9 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  activerecord-jdbcsqlite3-adapter
   bundler
+  jdbc-sqlite3
   jeweler
   rcov
   simplecov

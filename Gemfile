@@ -9,5 +9,7 @@ group :development do
   gem "jeweler"
   gem "rcov", :platforms => :ruby_18
   gem "simplecov", :platforms => :ruby_19
-  gem "sqlite3"
+	gem 'sqlite3', :platforms => :ruby
+	gem 'jdbc-sqlite3', :platforms => :jruby
+	gem 'activerecord-jdbcsqlite3-adapter', :platforms => :jruby
 end

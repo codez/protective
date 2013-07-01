@@ -45,3 +45,5 @@ pkg
 #
 # For vim:
 #*.swp
+
+.project

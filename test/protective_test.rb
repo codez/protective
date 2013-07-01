@@ -39,7 +39,7 @@ class ProtectiveTest < Test::Unit::TestCase
     assert_equal 1, s.attachments.count
     assert s.protected?
     assert !s.destroy
-    assert_equal ["Still has attachments"], s.errors[:base]    
+    assert_equal ["Still has attachments"], Array(s.errors[:base])    
     assert !s.destruction_allowed?
   end
   

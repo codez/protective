@@ -7,8 +7,7 @@ gem "activerecord"
 group :development do
   gem "bundler"
   gem "jeweler"
-  gem "rcov", :platforms => :ruby_18
-  gem "simplecov", :platforms => :ruby_19
+  gem "simplecov"
   gem 'sqlite3', :platforms => :ruby
   gem 'jdbc-sqlite3', :platforms => :jruby
   gem 'activerecord-jdbcsqlite3-adapter', '>=1.3.0.beta2', :platforms => :jruby

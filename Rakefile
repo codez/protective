@@ -9,10 +9,7 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
-
-
 task :default => :test
-
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
@@ -26,7 +23,7 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Pascal Zumkehr"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  gem.add_runtime_dependency 'activerecord'
+  #  gem.add_runtime_dependency 'activerecord'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -39,15 +36,6 @@ Rake::TestTask.new(:test) do |test|
 end
 
 task :default => :test
-
-if RUBY_VERSION == '1.8.7' && !defined?(JRUBY_VERSION)
-	require 'rcov/rcovtask'
-	Rcov::RcovTask.new do |test|
-	  test.libs << 'test'
-	  test.pattern = 'test/**/*_test.rb'
-	  test.verbose = true
-	end
-end
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|

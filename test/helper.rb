@@ -12,7 +12,8 @@ if RUBY_VERSION =~ /\A1\.9/ && !defined?(JRUBY_VERSION)
 	SimpleCov.start
 end
 
-require 'test/unit'
+require 'minitest'
+require 'minitest/autorun'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
@@ -21,12 +22,7 @@ require 'protective'
 DB_CONFIG = { :adapter => (defined?(JRUBY_VERSION) ? 'jdbcsqlite3' : 'sqlite3'),
               :database => File.join('test', 'protective_plugin.sqlite3.db')}
 
-
 def load_schema
   ActiveRecord::Base.establish_connection(DB_CONFIG)
   load(File.join(File.dirname(__FILE__), "schema.rb"))
-end
-
-
-class Test::Unit::TestCase
 end
